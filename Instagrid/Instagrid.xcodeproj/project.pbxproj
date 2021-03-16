@@ -56,15 +56,39 @@
 		DCF195822600DF77008414CE /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				DCF195832600DF77008414CE /* AppDelegate.swift */,
-				DCF195852600DF77008414CE /* SceneDelegate.swift */,
-				DCF195872600DF77008414CE /* ViewController.swift */,
-				DCF195892600DF77008414CE /* Main.storyboard */,
-				DCF1958C2600DF78008414CE /* Assets.xcassets */,
-				DCF1958E2600DF78008414CE /* LaunchScreen.storyboard */,
 				DCF195912600DF78008414CE /* Info.plist */,
+				DCF1959A2600E06F008414CE /* Supporting Files */,
+				DCF195992600E025008414CE /* Controller */,
+				DCF195982600DFF7008414CE /* View */,
 			);
 			path = Instagrid;
+			sourceTree = "<group>";
+		};
+		DCF195982600DFF7008414CE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DCF195892600DF77008414CE /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DCF195992600E025008414CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DCF195872600DF77008414CE /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DCF1959A2600E06F008414CE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCF195852600DF77008414CE /* SceneDelegate.swift */,
+				DCF1958C2600DF78008414CE /* Assets.xcassets */,
+				DCF195832600DF77008414CE /* AppDelegate.swift */,
+				DCF1958E2600DF78008414CE /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
