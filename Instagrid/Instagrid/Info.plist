@@ -62,5 +62,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>ThirtySoft.otf</string>
+		<string>Delm.otf</string>
+	</array>
 </dict>
 </plist>
