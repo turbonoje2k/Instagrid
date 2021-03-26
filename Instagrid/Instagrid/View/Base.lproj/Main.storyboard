@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,48 +24,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pZ-vO-jwq">
-                                <rect key="frame" x="108" y="33" width="198" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="35"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Swip up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oV3-ee-z1d">
-                                <rect key="frame" x="98" y="169" width="219" height="55"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pZ-vO-jwq">
+                                <rect key="frame" x="146.5" y="39" width="130" height="39"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="qE7-9s-Dma"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="9HH-xd-KyY"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="27"/>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="Ykl-w9-y9Q">
-                                <rect key="frame" x="57" y="286" width="300" height="324"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="^  Swip up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oV3-ee-z1d">
+                                <rect key="frame" x="132" y="233" width="150" height="58"/>
+                                <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaC-S3-Wco">
+                                <rect key="frame" x="60" y="306" width="294" height="294"/>
                                 <subviews>
-                                    <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGy-Db-5Gg">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="135"/>
-                                        <color key="backgroundColor" name="AccentColor"/>
-                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="MBa-Fm-2Ay"/>
-                                        </constraints>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GH9-ND-aCf">
-                                        <rect key="frame" x="0.0" y="178" width="300" height="146"/>
-                                        <color key="backgroundColor" name="AccentColor"/>
-                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="Mz4-gv-z74"/>
-                                        </constraints>
+                                    <stackView hidden="YES" contentMode="scaleToFill" axis="vertical" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="Ykl-w9-y9Q">
+                                        <rect key="frame" x="15" y="15" width="264" height="264"/>
+                                        <subviews>
+                                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="TGy-Db-5Gg">
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="112"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GH9-ND-aCf">
+                                                <rect key="frame" x="0.0" y="155" width="264" height="109"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                        <color key="tintColor" red="0.1795558333" green="0.40038830040000001" blue="0.58433765169999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                <color key="tintColor" red="0.1795558333" green="0.40038830040000001" blue="0.58433765169999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </stackView>
+                                <color key="backgroundColor" red="0.08931067744" green="0.1296658249" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ykl-w9-y9Q" secondAttribute="trailing" constant="15" id="90y-gN-aQt"/>
+                                    <constraint firstItem="Ykl-w9-y9Q" firstAttribute="top" secondItem="MaC-S3-Wco" secondAttribute="top" constant="15" id="UT8-KZ-hdO"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ykl-w9-y9Q" secondAttribute="bottom" constant="15" id="dcl-3x-LU8"/>
+                                    <constraint firstItem="Ykl-w9-y9Q" firstAttribute="leading" secondItem="MaC-S3-Wco" secondAttribute="leading" constant="15" id="idU-iE-j5i"/>
+                                    <constraint firstAttribute="width" secondItem="MaC-S3-Wco" secondAttribute="height" multiplier="1:1" id="xLA-bU-ZXa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.40342378620000002" green="0.55294817689999998" blue="0.76473319529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="3pZ-vO-jwq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-5" id="3dP-xk-yyW"/>
+                            <constraint firstItem="MaC-S3-Wco" firstAttribute="top" secondItem="oV3-ee-z1d" secondAttribute="bottom" constant="15" id="Fys-Q4-aqE"/>
+                            <constraint firstItem="oV3-ee-z1d" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="I7b-eE-tb0"/>
+                            <constraint firstItem="MaC-S3-Wco" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="KRO-eK-ugt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MaC-S3-Wco" secondAttribute="trailing" constant="60" id="QMA-qo-rG1"/>
+                            <constraint firstItem="3pZ-vO-jwq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="4.25" id="UCP-Ya-X3E"/>
+                            <constraint firstItem="MaC-S3-Wco" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="aby-Hs-crI"/>
+                            <constraint firstItem="MaC-S3-Wco" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="moK-hM-CaL"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -75,9 +90,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
