@@ -25,6 +25,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pZ-vO-jwq">
+                                <rect key="frame" x="108" y="33" width="198" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Swip up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oV3-ee-z1d">
                                 <rect key="frame" x="98" y="169" width="219" height="55"/>
                                 <constraints>
@@ -34,32 +41,29 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView hidden="YES" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="Ykl-w9-y9Q">
-                                <rect key="frame" x="-141" y="277" width="696" height="350"/>
+                            <stackView hidden="YES" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="Ykl-w9-y9Q">
+                                <rect key="frame" x="57" y="286" width="300" height="324"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="center" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGy-Db-5Gg">
-                                        <rect key="frame" x="0.0" y="0.0" width="696" height="155"/>
+                                    <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGy-Db-5Gg">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="135"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="MBa-Fm-2Ay"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GH9-ND-aCf">
-                                        <rect key="frame" x="0.0" y="184" width="696" height="166"/>
+                                        <rect key="frame" x="0.0" y="178" width="300" height="146"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="Mz4-gv-z74"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                                <constraints>
-                                    <constraint firstItem="GH9-ND-aCf" firstAttribute="top" secondItem="Ykl-w9-y9Q" secondAttribute="top" constant="184" id="zHX-Vt-1RV"/>
-                                </constraints>
+                                <color key="tintColor" red="0.1795558333" green="0.40038830040000001" blue="0.58433765169999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pZ-vO-jwq">
-                                <rect key="frame" x="108" y="33" width="198" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="35"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.40342378620000002" green="0.55294817689999998" blue="0.76473319529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
