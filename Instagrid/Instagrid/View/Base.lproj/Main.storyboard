@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,25 +17,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="3eZ-80-KFo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="3eZ-80-KFo">
                                 <rect key="frame" x="98" y="44" width="219" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ykl-w9-y9Q">
-                                <rect key="frame" x="20" y="247" width="374" height="370"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&gt; swip up to share" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oV3-ee-z1d">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="&gt; swip up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oV3-ee-z1d">
                                 <rect key="frame" x="98" y="169" width="219" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="qE7-9s-Dma"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView hidden="YES" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="Ykl-w9-y9Q">
+                                <rect key="frame" x="-141" y="277" width="696" height="350"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="center" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TGy-Db-5Gg">
+                                        <rect key="frame" x="0.0" y="0.0" width="696" height="155"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GH9-ND-aCf">
+                                        <rect key="frame" x="0.0" y="184" width="696" height="166"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstItem="GH9-ND-aCf" firstAttribute="top" secondItem="Ykl-w9-y9Q" secondAttribute="top" constant="184" id="zHX-Vt-1RV"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.40342378620000002" green="0.55294817689999998" blue="0.76473319529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="oV3-ee-z1d" firstAttribute="top" secondItem="3eZ-80-KFo" secondAttribute="bottom" constant="80" id="N6X-Om-1IE"/>
+                            <constraint firstItem="oV3-ee-z1d" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="169" id="Nlx-Do-GAw"/>
+                            <constraint firstItem="oV3-ee-z1d" firstAttribute="centerX" secondItem="Ykl-w9-y9Q" secondAttribute="centerX" id="bfP-JS-TAk"/>
+                            <constraint firstItem="oV3-ee-z1d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="98" id="c08-ia-ps8"/>
+                            <constraint firstItem="Ykl-w9-y9Q" firstAttribute="top" secondItem="oV3-ee-z1d" secondAttribute="bottom" constant="53" id="cyn-G3-hVJ"/>
+                            <constraint firstItem="oV3-ee-z1d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uqx-si-Wtz"/>
+                            <constraint firstItem="oV3-ee-z1d" firstAttribute="leading" secondItem="3eZ-80-KFo" secondAttribute="leading" id="v6k-zv-Ek4"/>
+                            <constraint firstItem="oV3-ee-z1d" firstAttribute="trailing" secondItem="3eZ-80-KFo" secondAttribute="trailing" id="x6I-sO-16e"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -44,8 +70,11 @@
     </scenes>
     <resources>
         <image name="Instagrid" width="41.5" height="13"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
