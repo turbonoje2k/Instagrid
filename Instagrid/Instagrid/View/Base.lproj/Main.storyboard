@@ -58,6 +58,12 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                         <color key="tintColor" red="0.1795558333" green="0.40038830040000001" blue="0.58433765169999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="GH9-ND-aCf" secondAttribute="bottom" id="DCI-Nh-97q"/>
+                                            <constraint firstItem="GH9-ND-aCf" firstAttribute="centerX" secondItem="Ykl-w9-y9Q" secondAttribute="centerX" id="Mlz-Mi-Ylp"/>
+                                            <constraint firstItem="TGy-Db-5Gg" firstAttribute="top" secondItem="Ykl-w9-y9Q" secondAttribute="top" id="aeh-hk-dMQ"/>
+                                            <constraint firstItem="TGy-Db-5Gg" firstAttribute="centerX" secondItem="Ykl-w9-y9Q" secondAttribute="centerX" id="ghA-rk-Vrd"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.08931067744" green="0.1296658249" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
