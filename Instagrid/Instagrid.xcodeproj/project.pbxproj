@@ -18,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DC2B5A24261CB481000E75DE /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
+		DC2B5A25261CB481000E75DE /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		DCF195802600DF77008414CE /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCF195832600DF77008414CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCF195852600DF77008414CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,8 @@
 		DCF195822600DF77008414CE /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				DC2B5A24261CB481000E75DE /* Delm-Medium.otf */,
+				DC2B5A25261CB481000E75DE /* ThirstySoftRegular.otf */,
 				DCF195912600DF78008414CE /* Info.plist */,
 				DCF1959A2600E06F008414CE /* Supporting Files */,
 				DCF195992600E025008414CE /* Controller */,
