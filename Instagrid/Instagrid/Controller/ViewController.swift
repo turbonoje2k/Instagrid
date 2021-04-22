@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonLayout1: UIButton!
     @IBOutlet weak var buttonLayout2: UIButton!
     @IBOutlet weak var buttonLayout3: UIButton!
-    @IBOutlet weak var swipe: UILabel!
+    @IBOutlet weak var swipeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,22 +23,23 @@ class ViewController: UIViewController {
         buttonLayout1.setImage(UIImage(named: "layoutSelected"), for: .selected)
         buttonLayout2.setImage(UIImage(named: "layoutSelected2"), for: .selected)
         buttonLayout3.setImage(UIImage(named: "layoutSelected3"), for: .selected)
+        swipeLabel.isUserInteractionEnabled = true 
         
-        let swipeTop = UISwipeGestureRecognizer(target: self, action: #selector(swipe.returnToSwipeGesture))
-        swipeTop.direction = UISwipeGestureRecognizer.Direction.up
-        swipe.view.addGestureRecognizer(swipeTop)
+        let gestureSwipeTop = UISwipeGestureRecognizer(target: self, action: #selector(returnToSwipeGesture))
+        gestureSwipeTop.direction = UISwipeGestureRecognizer.Direction.up
+        swipeLabel.addGestureRecognizer(gestureSwipeTop)
         
-        let swipeLeft = UISwipeGestureRecognizer(target: swipe, action: #selector(swipe.returnToSwipeGesture))
-        swipeTop.direction = UISwipeGestureRecognizer.Direction.left
-        swipe.view.addGestureRecognizer(swipeLeft)
+        let gestureSwipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(returnToSwipeGesture))
+        gestureSwipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        swipeLabel.addGestureRecognizer(gestureSwipeLeft)
     }
     
-    func returnToSwipeGesture(gesture: UIGestureRecognizer) {
+    @objc func returnToSwipeGesture(_ gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizer.Up:
+            case .up:
                 print("swipe top")
-            case  UISwipeGestureRecognizer.Left:
+            case  .left:
                 print("swipe left")
             default:
                 break

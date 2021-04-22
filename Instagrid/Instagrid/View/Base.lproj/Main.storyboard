@@ -214,7 +214,7 @@
                         <outlet property="buttonLayout1" destination="jqO-oK-W2f" id="SDI-gT-H99"/>
                         <outlet property="buttonLayout2" destination="JG2-ml-oO7" id="ntm-4k-pJ9"/>
                         <outlet property="buttonLayout3" destination="6P3-F1-cNb" id="c1F-yY-7JI"/>
-                        <outlet property="swip" destination="oV3-ee-z1d" id="NOW-nU-eVo"/>
+                        <outlet property="swipeLabel" destination="oV3-ee-z1d" id="RKb-rJ-51z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
