@@ -23,23 +23,27 @@ class ViewController: UIViewController {
         buttonLayout1.setImage(UIImage(named: "layoutSelected"), for: .selected)
         buttonLayout2.setImage(UIImage(named: "layoutSelected2"), for: .selected)
         buttonLayout3.setImage(UIImage(named: "layoutSelected3"), for: .selected)
-        swipeLabel.isUserInteractionEnabled = true 
-        
+       
+        //
         let gestureSwipeTop = UISwipeGestureRecognizer(target: self, action: #selector(returnToSwipeGesture))
         gestureSwipeTop.direction = UISwipeGestureRecognizer.Direction.up
-        swipeLabel.addGestureRecognizer(gestureSwipeTop)
+        view.addGestureRecognizer(gestureSwipeTop)
         
         let gestureSwipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(returnToSwipeGesture))
         gestureSwipeLeft.direction = UISwipeGestureRecognizer.Direction.left
-        swipeLabel.addGestureRecognizer(gestureSwipeLeft)
+        view.addGestureRecognizer(gestureSwipeLeft)
+        
+        print(UIDevice.current.orientation.isPortrait, "toto")
+        print(UIApplication.shared.statusBarOrientation.isLandscape)
+      
     }
     
-    @objc func returnToSwipeGesture(_ gesture: UIGestureRecognizer) {
+    @objc func returnToSwipeGesture(gesture: UIGestureRecognizer) {
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             switch swipeGesture.direction {
-            case .up:
+            case .up where UIDevice.current.orientation.isPortrait:
                 print("swipe top")
-            case  .left:
+            case .left where UIDevice.current.orientation.isLandscape:
                 print("swipe left")
             default:
                 break
