@@ -32,10 +32,10 @@ class ViewController: UIViewController {
         let gestureSwipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(returnToSwipeGesture))
         gestureSwipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         view.addGestureRecognizer(gestureSwipeLeft)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
-        print(UIDevice.current.orientation.isPortrait, "toto")
-        print(UIApplication.shared.statusBarOrientation.isLandscape)
-      
     }
     
     @objc func returnToSwipeGesture(gesture: UIGestureRecognizer) {
