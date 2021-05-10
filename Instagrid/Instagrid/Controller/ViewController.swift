@@ -12,7 +12,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonLayout1: UIButton!
     @IBOutlet weak var buttonLayout2: UIButton!
     @IBOutlet weak var buttonLayout3: UIButton!
+    
     @IBOutlet weak var swipeLabel: UILabel!
+    
+    @IBOutlet weak var topLeftButton: UIButton!
+    @IBOutlet weak var topRightButton: UIButton!
+    @IBOutlet weak var bottomLeftButton: UIButton!
+    @IBOutlet weak var bottomRightButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +30,16 @@ class ViewController: UIViewController {
         buttonLayout1.setImage(UIImage(named: "layoutSelected"), for: .selected)
         buttonLayout2.setImage(UIImage(named: "layoutSelected2"), for: .selected)
         buttonLayout3.setImage(UIImage(named: "layoutSelected3"), for: .selected)
+        
+        buttonLayout1.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
+        buttonLayout2.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
+        buttonLayout3.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
+        
+        buttonLayout1.tag = 1
+        buttonLayout2.tag = 2
+        buttonLayout3.tag = 3
        
-        //
+        
         let gestureSwipeTop = UISwipeGestureRecognizer(target: self, action: #selector(returnToSwipeGesture))
         gestureSwipeTop.direction = UISwipeGestureRecognizer.Direction.up
         view.addGestureRecognizer(gestureSwipeTop)
@@ -32,10 +47,12 @@ class ViewController: UIViewController {
         let gestureSwipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(returnToSwipeGesture))
         gestureSwipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         view.addGestureRecognizer(gestureSwipeLeft)
+        
+        changeUILabelText(bool: UIApplication.shared.statusBarOrientation.isPortrait)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        changeUILabelText(bool: UIDevice.current.orientation.isPortrait)
     }
     
     @objc func returnToSwipeGesture(gesture: UIGestureRecognizer) {
@@ -49,6 +66,39 @@ class ViewController: UIViewController {
                 break
             }
         }
+    }
+    
+    private func changeUILabelText(bool: Bool) {
+        swipeLabel.text = (bool) ? "^\nSwipe up to Share" : "<\nSwipe left to Share"
+        }
+    
+    @objc func changeLayoutButton(sender: UIButton) {
+        switch sender.tag {
+        case 1:
+            buttonLayout1.isSelected = true
+            buttonLayout2.isSelected = false
+            buttonLayout3.isSelected = false
+            topRightButton.isHidden = true
+            bottomLeftButton.isHidden = false
+        case 2:
+            buttonLayout2.isSelected = true
+            buttonLayout1.isSelected = false
+            buttonLayout3.isSelected = false
+            bottomLeftButton.isHidden = true
+            topRightButton.isHidden = false
+        case 3:
+            buttonLayout3.isSelected = true
+            buttonLayout2.isSelected = false
+            buttonLayout1.isSelected = false
+            bottomLeftButton.isHidden = false
+            topRightButton.isHidden = false
+        default:
+            break
+        }
+    }
+    
+    func pickerImage(<#parameters#>) -> <#return type#> {
+        <#function body#>
     }
 }
 

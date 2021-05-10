@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DCF195842600DF77008414CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF195832600DF77008414CE /* AppDelegate.swift */; };
-		DCF195862600DF77008414CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF195852600DF77008414CE /* SceneDelegate.swift */; };
 		DCF195882600DF77008414CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF195872600DF77008414CE /* ViewController.swift */; };
 		DCF1958B2600DF77008414CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCF195892600DF77008414CE /* Main.storyboard */; };
 		DCF1958D2600DF78008414CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCF1958C2600DF78008414CE /* Assets.xcassets */; };
@@ -22,7 +21,6 @@
 		DC2B5A25261CB481000E75DE /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		DCF195802600DF77008414CE /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCF195832600DF77008414CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCF195852600DF77008414CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DCF195872600DF77008414CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DCF1958A2600DF77008414CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCF1958C2600DF78008414CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 		DCF1959A2600E06F008414CE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DCF195852600DF77008414CE /* SceneDelegate.swift */,
 				DCF1958C2600DF78008414CE /* Assets.xcassets */,
 				DCF195832600DF77008414CE /* AppDelegate.swift */,
 				DCF1958E2600DF78008414CE /* LaunchScreen.storyboard */,
@@ -128,7 +125,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					DCF1957F2600DF77008414CE = {
 						CreatedOnToolsVersion = 12.4;
@@ -175,7 +172,6 @@
 			files = (
 				DCF195882600DF77008414CE /* ViewController.swift in Sources */,
 				DCF195842600DF77008414CE /* AppDelegate.swift in Sources */,
-				DCF195862600DF77008414CE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JBPW38DTN2;
 				INFOPLIST_FILE = Instagrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +341,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JBPW38DTN2;
 				INFOPLIST_FILE = Instagrid/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
