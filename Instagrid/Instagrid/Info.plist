@@ -48,5 +48,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>L&apos;application à besoin d&apos;avoir accées aux photos afin de fonctionner correctement </string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>L&apos;application à besoin d&apos;avoir accées aux photos afin de fonctionner correctement </string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>L&apos;application à besoin d&apos;avoir accées aux photos afin de fonctionner correctement </string>
 </dict>
 </plist>

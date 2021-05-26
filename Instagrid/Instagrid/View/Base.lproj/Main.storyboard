@@ -217,6 +217,7 @@
                         <outlet property="buttonLayout1" destination="jqO-oK-W2f" id="SDI-gT-H99"/>
                         <outlet property="buttonLayout2" destination="JG2-ml-oO7" id="ntm-4k-pJ9"/>
                         <outlet property="buttonLayout3" destination="6P3-F1-cNb" id="c1F-yY-7JI"/>
+                        <outlet property="centralView" destination="MaC-S3-Wco" id="0Qe-ly-qsk"/>
                         <outlet property="swipeLabel" destination="oV3-ee-z1d" id="RKb-rJ-51z"/>
                         <outlet property="topLeftButton" destination="xKR-Cd-bkk" id="L2O-RI-RFK"/>
                         <outlet property="topRightButton" destination="6Fp-Pc-dF0" id="YAZ-YJ-IoF"/>
