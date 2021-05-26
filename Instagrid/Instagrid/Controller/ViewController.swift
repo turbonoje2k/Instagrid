@@ -10,7 +10,7 @@ import Photos
 
 class ViewController: UIViewController {
 
-    //MARK: -IBoutlet
+    //MARK:- IBoutlet
     @IBOutlet weak var buttonLayout1: UIButton!
     @IBOutlet weak var buttonLayout2: UIButton!
     @IBOutlet weak var buttonLayout3: UIButton!
@@ -24,12 +24,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var centralView: UIView!
     
-    //MARK: -class var
+    //MARK:- class var
     private var buttonImage: UIButton?
     private var imagePicker: UIImagePickerController?
     private var activityController: UIActivityViewController?
     
-    //MARK: -View Did Load
+    //MARK:- App Life Cycle
+    //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         //check the status 
@@ -71,11 +72,12 @@ class ViewController: UIViewController {
         imagePicker?.delegate = self
         imagePicker?.sourceType = .savedPhotosAlbum
     }
-    //MARK: -View Will Transition
+    //MARK: View Will Transition
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         changeUILabelText(bool: UIDevice.current.orientation.isPortrait)
     }
-    //MARK: -Swipe
+    //MARK:- FUNCTIONS
+    //MARK: Swipe
     @objc func shareSwipeGesture(gesture: UIGestureRecognizer) {
         guard let imageToShare = centralView.asImage() else { return }
         activityController = UIActivityViewController(activityItems: [imageToShare as UIImage], applicationActivities: nil)
@@ -98,11 +100,11 @@ class ViewController: UIViewController {
         }
         present(activityVC, animated: true, completion: nil)
     }
-    //MARK: -UI label change with Orientation
+    //MARK: UI label change with Orientation
     private func changeUILabelText(bool: Bool) {
         swipeLabel.text = (bool) ? "^\nSwipe up to Share" : "<\nSwipe left to Share"
         }
-    //MARK: -Change Layout
+    //MARK: Change Layout
     @objc func changeLayoutButton(sender: UIButton) {
         switch sender.tag {
         case 1:
@@ -127,7 +129,7 @@ class ViewController: UIViewController {
             break
         }
     }
-    //MARK: -Acces Check
+    //MARK: Acces Check
     func checkAccess() -> Bool {
         var status: Bool = false
         
@@ -153,14 +155,14 @@ class ViewController: UIViewController {
         }
         return status
     }
-    //MARK: -Target Button
+    //MARK: Target Button
     func setupTargetButton() {
         topLeftButton.addTarget(self, action: #selector(addNewPhoto(_:)), for: .touchUpInside)
         topRightButton.addTarget(self, action: #selector(addNewPhoto(_:)), for: .touchUpInside)
         bottomLeftButton.addTarget(self, action: #selector(addNewPhoto(_:)), for: .touchUpInside)
         bottomRightButton.addTarget(self, action: #selector(addNewPhoto(_:)), for: .touchUpInside)
     }
-    //MARK: -Add Photo
+    //MARK: Add Photo
     @objc func addNewPhoto(_ sender: UIButton) {
         if checkAccess() {
             guard let secureImagePicker = imagePicker else { return }
@@ -175,7 +177,7 @@ class ViewController: UIViewController {
     }
 }
  
-//MARK: -EXTENSIONS
+//MARK:- EXTENSIONS
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
