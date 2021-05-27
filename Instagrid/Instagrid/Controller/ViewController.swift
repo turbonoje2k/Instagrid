@@ -28,6 +28,8 @@ class ViewController: UIViewController {
     private var buttonImage: UIButton?
     private var imagePicker: UIImagePickerController?
     private var activityController: UIActivityViewController?
+    private let screenWidth = UIScreen.main.bounds.width
+    private var translationTransform: CGAffineTransform
     
     //MARK:- App Life Cycle
     //MARK: View Did Load
@@ -91,14 +93,21 @@ class ViewController: UIViewController {
                 switch swipeGesture.direction {
                 case .up where UIDevice.current.orientation.isPortrait:
                     print("swipe top")
+                    self.translationTransform = CGAffineTransform(translationX: self.screenWidth, y: 0)
                 case .left where UIDevice.current.orientation.isLandscape:
                     print("swipe left")
+                    self.translationTransform = CGAffineTransform(translationX: -self.screenWidth, y: 0)
                 default:
                     break
                 }
             }
         }
         present(activityVC, animated: true, completion: nil)
+    }
+    func disapearTransform() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.centralView.transform = self.translationTransform
+        }, completion: nil)
     }
     //MARK: UI label change with Orientation
     private func changeUILabelText(bool: Bool) {
