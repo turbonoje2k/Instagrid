@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  InstagridViewController.swift
 //  Instagrid
 //
 //  Created by noje on 16/03/2021.
@@ -8,34 +8,43 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController {
+class InstagridViewController: UIViewController {
 
     //MARK:- IBoutlet
+    
+    // 3 button Unik Layout
     @IBOutlet weak var buttonLayout1: UIButton!
     @IBOutlet weak var buttonLayout2: UIButton!
     @IBOutlet weak var buttonLayout3: UIButton!
     
+    // swipe label change by orientation
     @IBOutlet weak var swipeLabel: UILabel!
     
+    // 4 box for pics
     @IBOutlet weak var topLeftButton: UIButton!
     @IBOutlet weak var topRightButton: UIButton!
     @IBOutlet weak var bottomLeftButton: UIButton!
     @IBOutlet weak var bottomRightButton: UIButton!
     
+    // 1 box for all pics
     @IBOutlet weak var centralView: UIView!
+    
+    // 
+    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var centerXConstraint: NSLayoutConstraint!
     
     //MARK:- class var
     private var buttonImage: UIButton?
     private var imagePicker: UIImagePickerController?
     private var activityController: UIActivityViewController?
     private let screenWidth = UIScreen.main.bounds.width
-    private var translationTransform: CGAffineTransform
+    private var translationTransform: CGAffineTransform?
     
-    //MARK:- App Life Cycle
+    //MARK:- APP LIFE CYCLE
     //MARK: View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
-        //check the status 
+        // check the status
         if checkAccess() {
             print("OK we have the cleareance")
         }
@@ -55,15 +64,17 @@ class ViewController: UIViewController {
         buttonLayout2.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
         buttonLayout3.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
         
+        // tag for the buttons
         buttonLayout1.tag = 1
         buttonLayout2.tag = 2
         buttonLayout3.tag = 3
        
-        
+        // var for gesture recognizer Top
         let gestureSwipeTop = UISwipeGestureRecognizer(target: self, action: #selector(shareSwipeGesture))
         gestureSwipeTop.direction = UISwipeGestureRecognizer.Direction.up
         view.addGestureRecognizer(gestureSwipeTop)
         
+        // var for gesture recognizer left
         let gestureSwipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(shareSwipeGesture))
         gestureSwipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         view.addGestureRecognizer(gestureSwipeLeft)
@@ -80,8 +91,16 @@ class ViewController: UIViewController {
     }
     //MARK:- FUNCTIONS
     //MARK: Swipe
-    @objc func shareSwipeGesture(gesture: UIGestureRecognizer) {
+    @objc func shareSwipeGesture(gesture: UISwipeGestureRecognizer) {
+        if gesture.direction == .up, UIDevice.current.orientation.isPortrait {
+            self.animateCentralViewInY(constraint: -UIScreen.main.bounds.height)
+        } else {
+            print("left")
+            self.animateCentralViewInX(constraint: -UIScreen.main.bounds.width)
+            //choisir X
+        }
         guard let imageToShare = centralView.asImage() else { return }
+        
         activityController = UIActivityViewController(activityItems: [imageToShare as UIImage], applicationActivities: nil)
         guard let activityVC = activityController else { return }
         activityVC.completionWithItemsHandler = {(activityType: UIActivity.ActivityType?,
@@ -89,28 +108,40 @@ class ViewController: UIViewController {
                                                   returnedItems: [Any]?,
                                                   error: Error?) in
             
-            if let swipeGesture = gesture as? UISwipeGestureRecognizer {
-                switch swipeGesture.direction {
+           
+                switch gesture.direction {
                 case .up where UIDevice.current.orientation.isPortrait:
                     print("swipe top")
-                    self.translationTransform = CGAffineTransform(translationX: self.screenWidth, y: 0)
+                    self.animateCentralViewInY(constraint: 0)
+                    
                 case .left where UIDevice.current.orientation.isLandscape:
                     print("swipe left")
-                    self.translationTransform = CGAffineTransform(translationX: -self.screenWidth, y: 0)
+                    self.animateCentralViewInX(constraint: 0)
                 default:
                     break
                 }
-            }
+            
         }
         present(activityVC, animated: true, completion: nil)
     }
-    func disapearTransform() {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.centralView.transform = self.translationTransform
-        }, completion: nil)
+
+    
+    private func animateCentralViewInY(constraint: CGFloat) {
+        UIView.animate(withDuration: 0.5) {
+            self.centerYConstraint.constant = constraint
+            self.view.layoutIfNeeded()
+        }
     }
+    private func animateCentralViewInX(constraint: CGFloat) {
+        UIView.animate(withDuration: 0.5) {
+            self.centerXConstraint.constant = constraint
+            self.view.layoutIfNeeded()
+        }
+    }
+    
     //MARK: UI label change with Orientation
     private func changeUILabelText(bool: Bool) {
+        
         swipeLabel.text = (bool) ? "^\nSwipe up to Share" : "<\nSwipe left to Share"
         }
     //MARK: Change Layout
@@ -187,7 +218,7 @@ class ViewController: UIViewController {
 }
  
 //MARK:- EXTENSIONS
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension InstagridViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             buttonImage?.setImage(nil, for: .normal)

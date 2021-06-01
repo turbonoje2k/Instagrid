@@ -16,10 +16,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Instagrid View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InstagridViewController" customModule="Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -217,6 +217,8 @@
                         <outlet property="buttonLayout1" destination="jqO-oK-W2f" id="SDI-gT-H99"/>
                         <outlet property="buttonLayout2" destination="JG2-ml-oO7" id="ntm-4k-pJ9"/>
                         <outlet property="buttonLayout3" destination="6P3-F1-cNb" id="c1F-yY-7JI"/>
+                        <outlet property="centerXConstraint" destination="moK-hM-CaL" id="NbS-i9-oE3"/>
+                        <outlet property="centerYConstraint" destination="aby-Hs-crI" id="QeD-zN-A9J"/>
                         <outlet property="centralView" destination="MaC-S3-Wco" id="0Qe-ly-qsk"/>
                         <outlet property="swipeLabel" destination="oV3-ee-z1d" id="RKb-rJ-51z"/>
                         <outlet property="topLeftButton" destination="xKR-Cd-bkk" id="L2O-RI-RFK"/>

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DCF195842600DF77008414CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF195832600DF77008414CE /* AppDelegate.swift */; };
-		DCF195882600DF77008414CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF195872600DF77008414CE /* ViewController.swift */; };
+		DCF195882600DF77008414CE /* InstagridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF195872600DF77008414CE /* InstagridViewController.swift */; };
 		DCF1958B2600DF77008414CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCF195892600DF77008414CE /* Main.storyboard */; };
 		DCF1958D2600DF78008414CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCF1958C2600DF78008414CE /* Assets.xcassets */; };
 		DCF195902600DF78008414CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCF1958E2600DF78008414CE /* LaunchScreen.storyboard */; };
@@ -22,7 +22,7 @@
 		DC2B5A25261CB481000E75DE /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		DCF195802600DF77008414CE /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCF195832600DF77008414CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCF195872600DF77008414CE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DCF195872600DF77008414CE /* InstagridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagridViewController.swift; sourceTree = "<group>"; };
 		DCF1958A2600DF77008414CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCF1958C2600DF78008414CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCF1958F2600DF78008414CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		DCF195992600E025008414CE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DCF195872600DF77008414CE /* ViewController.swift */,
+				DCF195872600DF77008414CE /* InstagridViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -181,7 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCF195882600DF77008414CE /* ViewController.swift in Sources */,
+				DCF195882600DF77008414CE /* InstagridViewController.swift in Sources */,
 				DCF8494526529D4D00253E27 /* UIView+AddOn.swift in Sources */,
 				DCF195842600DF77008414CE /* AppDelegate.swift in Sources */,
 			);
