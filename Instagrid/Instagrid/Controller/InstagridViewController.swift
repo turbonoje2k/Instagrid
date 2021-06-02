@@ -95,9 +95,7 @@ class InstagridViewController: UIViewController {
         if gesture.direction == .up, UIDevice.current.orientation.isPortrait {
             self.animateCentralViewInY(constraint: -UIScreen.main.bounds.height)
         } else {
-            print("left")
             self.animateCentralViewInX(constraint: -UIScreen.main.bounds.width)
-            //choisir X
         }
         guard let imageToShare = centralView.asImage() else { return }
         
@@ -124,8 +122,7 @@ class InstagridViewController: UIViewController {
         }
         present(activityVC, animated: true, completion: nil)
     }
-
-    
+    // func to change the view when swipe 
     private func animateCentralViewInY(constraint: CGFloat) {
         UIView.animate(withDuration: 0.5) {
             self.centerYConstraint.constant = constraint
@@ -141,7 +138,6 @@ class InstagridViewController: UIViewController {
     
     //MARK: UI label change with Orientation
     private func changeUILabelText(bool: Bool) {
-        
         swipeLabel.text = (bool) ? "^\nSwipe up to Share" : "<\nSwipe left to Share"
         }
     //MARK: Change Layout
@@ -218,6 +214,7 @@ class InstagridViewController: UIViewController {
 }
  
 //MARK:- EXTENSIONS
+// extend my Main class with new funcs
 extension InstagridViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
