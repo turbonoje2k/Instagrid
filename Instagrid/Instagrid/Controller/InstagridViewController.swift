@@ -10,8 +10,7 @@ import Photos
 
 class InstagridViewController: UIViewController {
 
-    //MARK:- IBoutlet
-    
+    // MARK:- IBoutlet
     // 3 button Unik Layout
     @IBOutlet weak var buttonLayout1: UIButton!
     @IBOutlet weak var buttonLayout2: UIButton!
@@ -29,7 +28,7 @@ class InstagridViewController: UIViewController {
     // 1 box for all pics
     @IBOutlet weak var centralView: UIView!
     
-    // 
+    // change the centralView Constraint
     @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
     @IBOutlet weak var centerXConstraint: NSLayoutConstraint!
     
@@ -105,8 +104,6 @@ class InstagridViewController: UIViewController {
                                                   completed: Bool,
                                                   returnedItems: [Any]?,
                                                   error: Error?) in
-            
-           
                 switch gesture.direction {
                 case .up where UIDevice.current.orientation.isPortrait:
                     print("swipe top")
@@ -118,7 +115,6 @@ class InstagridViewController: UIViewController {
                 default:
                     break
                 }
-            
         }
         present(activityVC, animated: true, completion: nil)
     }
@@ -135,12 +131,11 @@ class InstagridViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
-    //MARK: UI label change with Orientation
+    // MARK: UI label change with Orientation
     private func changeUILabelText(bool: Bool) {
         swipeLabel.text = (bool) ? "^\nSwipe up to Share" : "<\nSwipe left to Share"
         }
-    //MARK: Change Layout
+    // MARK: Change Layout
     @objc func changeLayoutButton(sender: UIButton) {
         switch sender.tag {
         case 1:
@@ -165,7 +160,8 @@ class InstagridViewController: UIViewController {
             break
         }
     }
-    //MARK: Acces Check
+    // MARK: Acces Check
+    // acces to the photo Library need authorization
     func checkAccess() -> Bool {
         var status: Bool = false
         
@@ -191,14 +187,14 @@ class InstagridViewController: UIViewController {
         }
         return status
     }
-    //MARK: Target Button
+    // MARK: Target Button
     func setupTargetButton() {
         topLeftButton.addTarget(self, action: #selector(addNewPhoto(_:)), for: .touchUpInside)
         topRightButton.addTarget(self, action: #selector(addNewPhoto(_:)), for: .touchUpInside)
         bottomLeftButton.addTarget(self, action: #selector(addNewPhoto(_:)), for: .touchUpInside)
         bottomRightButton.addTarget(self, action: #selector(addNewPhoto(_:)), for: .touchUpInside)
     }
-    //MARK: Add Photo
+    // MARK: Add Photo
     @objc func addNewPhoto(_ sender: UIButton) {
         if checkAccess() {
             guard let secureImagePicker = imagePicker else { return }
@@ -212,8 +208,7 @@ class InstagridViewController: UIViewController {
         }
     }
 }
- 
-//MARK:- EXTENSIONS
+// MARK:- EXTENSIONS
 // extend my Main class with new funcs
 extension InstagridViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
