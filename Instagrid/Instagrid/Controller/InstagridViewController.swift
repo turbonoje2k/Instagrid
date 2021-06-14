@@ -59,9 +59,12 @@ class InstagridViewController: UIViewController {
         buttonLayout3.setImage(UIImage(named: "layoutSelected3"), for: .selected)
         
         // tap trigger button
-        buttonLayout1.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
-        buttonLayout2.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
-        buttonLayout3.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
+//        buttonLayout1.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
+//        buttonLayout2.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
+//        buttonLayout3.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
+        [buttonLayout1, buttonLayout2, buttonLayout3].forEach {
+            $0.addTarget(self, action: #selector(changeLayoutButton(sender:)), for: .touchUpInside)
+        }
         
         // tag for the buttons
         buttonLayout1.tag = 1
@@ -219,5 +222,3 @@ extension InstagridViewController: UIImagePickerControllerDelegate, UINavigation
         }
     }
 }
-
-
