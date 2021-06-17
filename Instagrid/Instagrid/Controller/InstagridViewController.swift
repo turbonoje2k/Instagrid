@@ -54,7 +54,7 @@ class InstagridViewController: UIViewController {
         buttonLayout3.setImage(UIImage(named: "Layout3"), for: .normal)
         
         // button layout selected
-        buttonLayout1.setImage(UIImage(named: "layoutSelected"), for: .selected)
+        buttonLayout1.setImage(UIImage(named: "layoutSelected1"), for: .selected)
         buttonLayout2.setImage(UIImage(named: "layoutSelected2"), for: .selected)
         buttonLayout3.setImage(UIImage(named: "layoutSelected3"), for: .selected)
         
